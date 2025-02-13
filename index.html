@@ -1,25 +1,43 @@
-<html></html>
-
-  <head>
-
-    <title>Omat sivut</title>
-      <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-
-    <h1>Portfolio!</h1>
-
-
-    <h4>2025-taitaja</h4>
-
-    <p>olen osallistunut 2025-taitajaan semifinaali en valitettavasti pääsy finaliin mutta olin meidän porukasta paras ja sain parhaat pisteet</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>THE WORST PAGE EVER</title>
+</head>
+<body onload="startChaos()">
+    <h1>WELCOME TO HELL 🔥</h1>
+    <p>Can you solve the "SECRET" puzzle?</p>
     
+    <input type="text" id="aasi" placeholder="Type here">
+    <input type="button" id="password" value="CONFIRM">
+    <p id="message"></p>
 
-    <h4>sivut</h4>
+    <script>
+        const aasi = document.getElementById('aasi');
+        const password = document.getElementById('password');
+        const message = document.getElementById('message');
+        const secret = "SECRET";
 
-    <p>olen tehnyt monia eri sivustoja ennen ja</p>
+        password.addEventListener('click', function() {
+            if (aasi.value.toUpperCase() === secret) {
+                message.textContent = "Fine... you got it.";
+                message.style.color = "green";
+                alert("Ugh... fine. You win.");
+            } else {
+                message.textContent = "YOU SUCK! TRY AGAIN!";
+                message.style.color = "red";
+                alert("WRONG! You're terrible at this.");
+            }
+        });
 
-  </body>
-
+        function startChaos() {
+            setInterval(() => {
+                document.body.style.backgroundColor = 
+                    `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            }, 500);
+        }
+    </script>
+</body>
 </html>
